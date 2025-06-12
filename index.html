@@ -1,204 +1,282 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="scroll-smooth">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Horaira Rezon</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./src/style.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
+
 <body>
-  <header>
-    <nav>
-      <a href="#header" class="logo">Horaira Rezon</a>
-      <ul class="nav-links">
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#skills">Skills & Awards</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact Me</a></li>
-        <li><a href="https://drive.google.com/file/d/1kZlZbyN9jQ6H-4KF6iZOEsMOyf1VDPPm/view?usp=drive_link" target="_blank">CV</a></li>
-      </ul>
+  <section class="bg-gray-900">
+    <nav x-data="{ isOpen: false }" class="container p-6 mx-auto lg:flex lg:justify-between lg:items-center">
+      <div class="flex items-center justify-between">
+        <a href="#">
+          <h1 class="sm:text-4xl text-3xl mb-4 font-bold text-blue-600"> Horaira Rezon
+          </h1>
+        </a>
+
+        <!-- Mobile menu button -->
+        <div class="flex lg:hidden">
+          <button x-cloak @click="isOpen = !isOpen" type="button"
+            class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+            aria-label="toggle menu">
+            <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+            </svg>
+
+            <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+      <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
+        class="fixed inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white shadow-md lg:bg-transparent lg:dark:bg-transparent lg:shadow-none dark:bg-gray-900 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
+        <div class="flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:space-y-0 font-bold">
+          <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-blue-400 hover:text-blue-500"
+            href="#me">About me</a>
+          <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-blue-400 hover:text-blue-500"
+            href="#skill">Skills</a>
+          <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-blue-400 hover:text-blue-500"
+            href="#">Awards</a>
+          <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-blue-400 hover:text-blue-500"
+            href="#">Projects</a>
+          <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-blue-400 hover:text-blue-500"
+            href="#">CV</a>
+        </div>
+
+        <a class="block h-10 px-5 py-2 mt-4 text-sm text-center text-gray-700 capitalize transition-colors duration-300 transform border rounded-md dark:hover:bg-gray-700 dark:text-white lg:mt-0 hover:bg-gray-100 lg:w-auto"
+          href="#">
+          Contact me
+        </a>
+      </div>
     </nav>
-  </header>
 
-  <section id="header" class="section fade-in">
-    <div class="header-container">
-      <img src="zzzpropic.jpg" alt="zzzpropic.jpg" class="profile-img"/>
-      <div class="header-text">
-        <p>
-          MD. Abu Horaira Al Rezon<br>
-          Department of Farm Power and Machinery,<br>
-          Faculty of Agricultural Engineering and Technology,<br>
-          Bangladesh Agricultural University,<br>
-          Mymensingh-2202, Bangladesh
+    <!--top hero section-->
+    <div class="container flex flex-col px-6 py-10 mx-auto space-y-6 lg:h-full lg:py-16 lg:flex-row lg:items-center"
+      id="me">
+      <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0 p-16">
+            <img class="object-cover object-center rounded-full" alt="hero" src="/images/zzzpropic.jpg">
+          </div>
+          <div
+            class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+            <h1
+              class="sm:text-5xl text-4xl mb-4 font-medium bg-gradient-to-tl from-slate-800 via-violet-500 to-zinc-400 bg-clip-text text-transparent">
+              Abu Horaira Al Rezon
+            </h1>
+            <p class="mb-8 leading-relaxed text-white">I am an aspiring Agricultural Engineer with a strong academic
+              foundation and
+              specialization in Precision Agriculture, currently pursuing a B.Sc. in Agricultural Engineering at
+              Bangladesh Agricultural University, under the Department of Farm Power and Machinery. I am passionate
+              about and focused on integrating cutting-edge technologies into modern agricultural systems.</p>
+            <p class="mb-8 leading-relaxed text-white">My core interest lies at the integration of Artificial
+              Intelligence, Agricultural Robotics, Machine Vision, and the Internet of Things (IoT). I am actively
+              developing expertise in applying these technologies to enhance productivity, efficiency, and environmental
+              sustainability in Agriculture. With a passion for research, I aim to contribute to the future of Smart
+              Farming and Digital Agriculture. My work revolves around solving real-world agricultural problems by
+              integrating the power of smart technologies to improve crop health monitoring, automate repetitive tasks,
+              and ensure optimal resource utilization.</p>
+          </div>
+        </div>
+        <a href="#skill">
+          <button
+            class="flex mx-auto mt-16 text-white bg-gradient-to-r from-[#0e7490] via-[#3b82f6] to-[#4f46e5] border-0 py-2 px-8  hover:bg-indigo-600 rounded text-lg transition-all duration-200">
+            Click
+            to know more</button>
+        </a>
+      </section>
+    </div>
+  </section>
+
+  <!--Skills section-->
+  <section class="text-gray-600 body-font bg-gradient-to-b from-gray-900 via-blue-900 to-slate-800" id="skill">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="text-center mb-20">
+        <h1
+          class="sm:text-5xl text-4xl font-bold bg-gradient-to-tl from-slate-800 via-violet-500 to-zinc-400 bg-clip-text text-transparent mb-4">
+          Skills</h1>
+        <p class="mb-8 leading-relaxed text-white xl:w-2/4 lg:w-3/4 mx-auto">I mainly focus on combining
+          hands-on engineering specialities with theoretical knowledge. My skills span across Python, C/C++, OpenCV,
+          TensorFlow, and Scikit-learn, with experience in Raspberry Pi, Arduino, Embedded Systems, Mechatronics, and
+          designing tools in SolidWorks, AutoCAD, and MATLAB. I am also proficient in geospatial tools like ArcGIS,
+          enabling spatial analysis for precision field management.
         </p>
+        <div class="flex mt-6 justify-center">
+          <div class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
+        </div>
+      </div>
+      <!--ICONS-->
+      <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 mt-4 md:space-y-0 space-y-6">
+        <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+          <div class="w-20 h-20 inline-flex items-center justify-center mb-5 flex-shrink-0">
+            <img src="/images/python.svg" class="h-32">
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-white text-lg title-font font-medium mb-3">Python</h2>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+          <div class="w-20 h-20 inline-flex items-center justify-center mb-5 flex-shrink-0">
+            <img src="/images/tensorflow.svg" class="h-32">
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-white text-lg title-font font-medium mb-3">Tensorflow</h2>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+          <div class="w-20 h-20 inline-flex items-center justify-center mb-5 flex-shrink-0">
+            <img src="/images/matlab.svg" class="h-32">
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-white text-lg title-font font-medium mb-3">Matlab</h2>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+          <div class="w-20 h-20 inline-flex items-center justify-center mb-5 flex-shrink-0">
+            <img src="/images/c-plusplus.svg" class="h-32">
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-white text-lg title-font font-medium mb-3">C++</h2>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+          <div class="w-20 h-20 inline-flex items-center justify-center mb-5 flex-shrink-0">
+            <img src="/images/github_dark.svg" class="h-32">
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-white text-lg title-font font-medium mb-3">Github</h2>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+          <div class="w-20 h-20 inline-flex items-center justify-center mb-5 flex-shrink-0">
+            <img src="/images/raspberry_pi.svg" class="h-32">
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-white text-lg title-font font-medium mb-3">Embeded systems</h2>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="about" class="section slide-up">
-    <h2>About Me</h2>
-    <div class="about-text collapsed" id="aboutText">
-      <p id="aboutPara">
-        I am an aspiring Agricultural Engineer with a strong academic foundation and specialization in Precision Agriculture, currently pursuing a B.Sc. in Agricultural Engineering at Bangladesh Agricultural University, under the Department of Farm Power and Machinery. I am passionate about and focused on integrating cutting-edge technologies into modern agricultural systems.<br><br>
-
-        My core interest lies at the integration of Artificial Intelligence, Agricultural Robotics, Machine Vision, and the Internet of Things (IoT). I am actively developing expertise in applying these technologies to enhance productivity, efficiency, and environmental sustainability in Agriculture. With a passion for research, I aim to contribute to the future of Smart Farming and Digital Agriculture. My work revolves around solving real-world agricultural problems by integrating the power of smart technologies to improve crop health monitoring, automate repetitive tasks, and ensure optimal resource utilization.
-        <span id="dots"></span><span id="moreText" style="display: none;"> <br><br>
-        
-        I mainly focus on combining hands-on engineering specialities with theoretical knowledge. My skills span across Python, C/C++, OpenCV, TensorFlow, and Scikit-learn, with experience in Raspberry Pi, Arduino, Embedded Systems, Mechatronics, and designing tools in SolidWorks, AutoCAD, and MATLAB. I am also proficient in geospatial tools like ArcGIS, enabling spatial analysis for precision field management.<br><br>
-        
-        Over the courses of my academic journey, I’ve actively contributed to a range of technology-driven agricultural projects, including innovations in disease prediction, smart irrigation, farm automation, and non-destructive fruit quality assessment. These experiences have strengthened my ability to design practical, research-backed solutions for modern farming challenges.<br><br>
-        
-        My efforts have been recognized through various national-level awards and competitions, reflecting both creativity and commitment to advancing Agricultural Engineering.<br><br>
-        
-        With a strong foundation in both research and real-world application, my goal is to bridge the gap between emerging technologies and everyday farming practices driving the future of Precision Agriculture and Sustainable Food Systems.
-      </span>
-      <a href="#" id="toggleLink" onclick="toggleAbout(event)"> See More</a>
-      </p>
+  <!--AWARDS-->
+  <section class="text-gray-600 body-font bg-slate-800">
+    <div class="container mx-auto">
+      <h1
+        class="text-center sm:text-5xl text-4xl font-bold bg-gradient-to-tl from-slate-800 via-violet-500 to-zinc-400 bg-clip-text text-transparent mb-4">
+        Awards</h1>
+    </div>
+    <div class="container px-5 py-24 mx-auto flex flex-row bg-slate-800">
+      <div class="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
+        <img alt="feature" class="object-cover object-center h-full w-full" src="/images/Awards-rafiki.svg">
+      </div>
+      <div class="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
+        <div class="flex flex-col mb-10 lg:items-start items-center">
+          <div
+            class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-6 h-6" viewBox="0 0 24 24">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Shooting Stars</h2>
+            <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+              taxidermy. Gastropub indxgo juice poutine.</p>
+            <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-col mb-10 lg:items-start items-center">
+          <div
+            class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-6 h-6" viewBox="0 0 24 24">
+              <circle cx="6" cy="6" r="3"></circle>
+              <circle cx="6" cy="18" r="3"></circle>
+              <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+            </svg>
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-gray-900 text-lg title-font font-medium mb-3">The Catalyzer</h2>
+            <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+              taxidermy. Gastropub indxgo juice poutine.</p>
+            <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-col mb-10 lg:items-start items-center">
+          <div
+            class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-6 h-6" viewBox="0 0 24 24">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Neptune</h2>
+            <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+              taxidermy. Gastropub indxgo juice poutine.</p>
+            <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-<section id="skills" class="section slide-up">
-  <h2>Skills & Awards</h2>
-  <div class="skills-container">
-  
-<div class="skill-progress-bars">
-<div class="disc-container">
-  <h3>Proficiency</h3>
-  <svg viewBox="0 0 100 100" class="circular-disc">
-    <circle class="circle-bg" cx="50" cy="50" r="40"></circle>
-    <circle class="circle" cx="50" cy="50" r="40"></circle>
-    <text class="percentage-text" x="50" y="55">0%</text>
-  </svg>
-  <div class="skill-label" id="selected-skill">Click a Skill</div>
-</div>
-</div>
-    
-    <div class="skill-box">
-      <h3>Skills</h3>
-      <ul>
-        <li><span class="clickable-skill" data-skill="Python" data-level="90">Python</span>, <span class="clickable-skill" data-skill="C/C++" data-level="80">C/C++</span>, <span class="clickable-skill" data-skill="OpenCV" data-level="75">OpenCV</span>, <span class="clickable-skill" data-skill="Scikit-learn" data-level="70">Scikit-learn</span>, <span class="clickable-skill" data-skill="TensorFlow" data-level="60">TensorFlow</span>, <span class="clickable-skill" data-skill="Keras" data-level="50">Keras</span>, <span class="clickable-skill" data-skill="Pandas" data-level="80">Pandas</span></li>
-        <li><span class="clickable-skill" data-skill="Spectroscopy" data-level="75">Spectroscopy</span>, <span class="clickable-skill" data-skill="Mechatronics" data-level="55">Mechatronics</span></li>
-        <li><span class="clickable-skill" data-skill="Raspberry Pi" data-level="65">Raspberry Pi</span>, <span class="clickable-skill" data-skill="Arduino" data-level="80">Arduino</span></li>
-        <li><span class="clickable-skill" data-skill="ArcGIS" data-level="65">ArcGIS</span>, <span class="clickable-skill" data-skill="AutoCAD" data-level="75">AutoCAD</span>, <span class="clickable-skill" data-skill="SolidWorks" data-level="50">SolidWorks</span>, <span class="clickable-skill" data-skill="MATLAB" data-level="60">MATLAB</span></li>
-      </ul>
+  <!--AWRADS-->
+
+  <!--Footer-->
+  <footer class="bg-gray-900">
+    <div class="container flex flex-row items-center justify-between p-6 mx-auto space-y-4 sm:space-y-0 sm:flex-row">
+      <a href="#">
+        <h1 class="sm:text-4xl text-3xl mb-4 font-bold text-blue-600"> Horaira Rezon
+        </h1>
+      </a>
+
+      <p class="text-sm text-gray-600 dark:text-gray-300">© Copyright 2025. All Rights Reserved.</p>
+
+      <div class="flex space-x-2">
+        <a href="#" class="mtext-white transition-colors duration-300 hover:text-blue-500" aria-label="Facebook">
+          <img src="/images/facebook.svg" class="h-12 p-2">
+        </a>
+
+        <a href="#" class="text-white transition-colors duration-300 hover:text-blue-500" aria-label="Linkedin">
+          <img src="/images/linkedin.svg" class="h-12 p-2">
+        </a>
+
+        <a href="#" class="text-white transition-colors duration-300 hover:text-blue-500" aria-label="Instagram">
+          <img src="/images/instagram_dark.svg" class="h-12 p-2">
+        </a>
+        <a href="#" class="text-white transition-colors duration-300 hover:text-blue-500" aria-label="Github">
+          <img src="/images/github_dark.svg" class="h-12 p-2">
+        </a>
+
+      </div>
     </div>
-
-    <div class="skill-box">
-      <h3>Awards</h3>
-      <ul>
-        <li>
-          3rd at BARI Farm Mechanization Idea Competition 2025 –
-          <a href="https://drive.google.com/file/d/1kjE30pVjfCmiiF8jFyxT6hdFN81JEuAC/view?usp=drive_link" target="_blank" class="certificate-link">Certificate</a>
-        </li>
-        <li>Runner-up at Sherpur Science Fair 2017</li>
-        <li>Winner at Creative Talent Search Competition 2016</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-  <section id="projects" class="section fade-in">
-    <h2>Projects</h2>
-    <div class="projects-container">
-
-      <div class="project-box" onclick="toggleProject(this)">
-        <div class="project-title">
-          <a href="https://shorturl.at/TdCcR" target="_blank">Prediction of Early Blight Disease in Potato using Machine Learning</a>
-        </div>
-        <div class="project-details">
-          <p>
-            Potato (Solanum tuberosum L.) is one of the most vital crops in Bangladesh but is highly susceptible to early blight. (Chothani, et al., 2017) found that early blight severity increases significantly under higher temperature (35-38°C), lower evening humidity (30-58%), and moderate wind speed (1.2–2.2 km/h). Relative humidity more than 90% for 5 to 6 hours accelerates spore germination. (Cowgill, et al., 2005) Weather data can be used to predict early blight as the fungal activity majorly depends on the environment.<br><br>
-            To combat this significant agricultural challenge, our team is developing an advanced predictive model for Early Blight. Our approach aims to empower farmers with timely, data-driven insights for disease management. The main objective of this study is to develop an AI-powered early warning system that predicts the risk of early blight in potato crops using real-time microclimatic data from a portable mini weather station.<br><br>
-            We've focused on creating a solution that is both practical and scalable, ensuring it can be effectively deployed across diverse farming conditions in Bangladesh. This not only promotes precise disease management decisions but also supports environmental sustainability by potentially reducing the indiscriminate use of fungicides.<br><br>
-            <li>Practical and scalable solution for managing early blight in potatoes was designed and implemented.</li>
-            <li>Precise, data-driven decision-making was promoted through this approach, supporting environmental stability.</li>
-          </p>
-        </div>
-      </div>
-
-      <div class="project-box" onclick="toggleProject(this)">
-        <div class="project-title">
-          <a href="http://dx.doi.org/10.13140/RG.2.2.12466.93122" target="_blank">AgriSpectro: Affordable Spectroscopic Device for Non-destructive Fruit Quality Analysis</a>
-        </div>
-        <div class="project-details">
-          <p>
-            The farmers of Bangladesh face substantial financial setbacks each year due to inadequate methods for assessing and managing fruit quality. Postharvest losses for fruits in the country are alarmingly high, ranging from 25% to 50% of total production, severely impacting both farmer incomes and the national economy. According to recent studies, the gross monetary loss from poor postharvest handling of fruits in Bangladesh is estimated at Tk. 6,120 to 8,160 million annually. These losses are particularly severe for key fruits like Mango (39.38%), Banana (26.63%), Jackfruit (32%) and Brinjal (22%).<br><br>
-            At the root of this crisis is the lack of accessible technology and limited awareness among farmers regarding critical quality parameters and proper handling techniques. Assessing internal quality factors like sugar content, acidity, firmness or oil content farmers are forced to rely on manual inspection methods that are often inaccurate and destructive.<br><br>
-            This project aims to develop an affordable, portable spectroscopic solution that enables non-destructive fruit quality analysis, empowering farmers with the tools they need to make smarter, more profitable decisions.<br><br>
-            <li>Vis-NIR Spectroscopy was utilized to enable non-destructive assessment of internal fruit quality.</li>
-          </p>
-        </div>
-      </div>
-
-      <div class="project-box" onclick="toggleProject(this)">
-        <div class="project-title">
-          <a href="https://github.com/Allsabaab/Automated-Watering-System-for-Plants" target="_blank">Automated Watering System for Plants</a>
-        </div>
-        <div class="project-details">
-          <p>
-            This is a design of a system that uses an Arduino to intelligently control motors based on input from either an IR Remote or a Soil Moisture Sensor. Think of it as the brain behind a potential Robot or an Automated Watering System. In fact, this setup also functions as a remote-controlled Robot Car, allowing for manual field navigation to check soil moisture and precisely water specific areas. The LCD Screen provides real-time feedback, making the system interactive and informative.<br><br>
-            Key Functionalities:
-          <li>Soil moisture levels are monitored by this system.</li>
-          <li>Automatic water pump activation is enabled when moisture levels fall below a defined threshold.</li>
-          <li>Manual navigation of the Robot Car is facilitated via an IR Remote for checking soil conditions and watering specific areas.</li>
-          </p>
-        </div>
-      </div>
-
-      <div class="project-box" onclick="toggleProject(this)">
-        <div class="project-title">
-          <a href="https://github.com/Allsabaab/Farm-Inventory-Management-System" target="_blank">Farm Inventory Management System</a>
-        </div>
-        <div class="project-details">
-          <p>
-            System designed to streamline the management of agricultural equipment and tools were developed.<br><br>
-            Key Features:
-            <li>Add, update, and delete equipment records.</li>
-            <li>Track equipment type, power source, availability, and price.</li>
-            <li>Generate insightful Bar and Pie charts using Matplotlib.</li>
-            <li>CSV-based storage for easy access and data manipulation.</li>
-            <li>User-friendly terminal interface with robust error handling.</li>
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="contact-links" id="contact">
-    <div class="contact-row">
-      <div class="contact-item">
-        <h2>Contact Me :</h2>
-      </div>
-      <div class="contact-item">
-        <span>aharezon@gmail.com</span>
-      </div>
-      <div class="contact-item">
-        <span>+880 179 9144 788</span>
-      </div>
-      <a href="https://www.linkedin.com/in/allsabaab/" target="_blank" class="contact-icon">
-        <img src="zlinkedin.png" alt="zlinkedin.png"/>
-      </a>
-      <a href="https://github.com/Allsabaab" target="_blank" class="contact-icon">
-        <img src="zgithub.png" alt="zgithub.png"/>
-      </a>
-      <a href="https://www.researchgate.net/profile/Horaira-Rezon" target="_blank" class="contact-icon">
-        <img src="zresearchgate.png" alt="zresearchgate.png"/>
-      </a>
-      <a href="https://x.com/Allsabaab" target="_blank" class="contact-icon">
-        <img src="zx.png" alt="zx.png" />
-      </a>
-      <a href="https://www.facebook.com/Allsabaab" target="_blank" class="contact-icon">
-        <img src="zfacebook.png" alt="zfacebook.png"/>
-      </a>
-      <a href="https://www.instagram.com/allsabaab/" target="_blank" class="contact-icon">
-        <img src="zig.png" alt="zig.png"/>
-      </a>
-    </div>
-  </section>
-
-  <script src="script.js"></script>
+  </footer>
 </body>
+
 </html>
